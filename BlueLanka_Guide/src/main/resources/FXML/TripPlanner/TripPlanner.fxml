@@ -1,181 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.bluelanka_guide.controller.TripPlanner.TripPlannerController"
-            prefHeight="600.0" prefWidth="800.0" stylesheets="@styles/TripPlanner.css" styleClass="main-container">
-
-    <!-- Top Banner -->
-    <top>
-        <VBox alignment="CENTER" spacing="10" styleClass="header-container">
-            <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
-            </padding>
-            <ImageView fitWidth="120" preserveRatio="true">
-                <Image url="@./images/logo.png"/>
-            </ImageView>
-            <Label text="Blue Lanka Guide Planner" styleClass="title-label">
-                <font>
-                    <Font name="System Bold" size="24"/>
-                </font>
-            </Label>
-            <Label text="Plan your perfect journey on the sea" styleClass="subtitle-label"/>
-        </VBox>
-    </top>
+<BorderPane prefHeight="600.0" prefWidth="800.0" styleClass="main-container" stylesheets="@styles/TripPlanner.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TripPlanner.TripPlannerController">
 
     <!-- Main Content Area -->
     <center>
         <TabPane tabClosingPolicy="UNAVAILABLE">
-            <Tab text="Destinations" styleClass="tab">
+            <Tab styleClass="tab" text="Destinations">
                 <ScrollPane fitToWidth="true">
                     <VBox spacing="15" styleClass="content-container">
                         <padding>
-                            <Insets top="20" right="20" bottom="20" left="20"/>
+                            <Insets bottom="20" left="20" right="20" top="20" />
                         </padding>
 
-                        <Label text="Select your preferred destinations" styleClass="section-header"/>
+                        <Label styleClass="section-header" text="Select your preferred destinations" />
 
                         <TitledPane text="Geographic Regions">
                             <VBox spacing="10">
-                                <CheckBox fx:id="checkMediterranean" text="Mediterranean Sea"/>
-                                <CheckBox fx:id="checkCaribbean" text="Caribbean"/>
-                                <CheckBox fx:id="checkNordicFjords" text="Nordic Fjords"/>
-                                <CheckBox fx:id="checkSouthPacific" text="South Pacific"/>
-                                <CheckBox fx:id="checkOther" text="Other" onAction="#handleOtherRegion"/>
-                                <TextField fx:id="txtOtherRegion" promptText="Specify other region" visible="false"/>
+                                <CheckBox fx:id="checkMatara" text="Matara" />
+                                <CheckBox fx:id="checkHikkaduwa" text="Hikkaduwa" />
+                                <TextField fx:id="txtOtherRegion" promptText="Specify other region" visible="false" />
                             </VBox>
                         </TitledPane>
 
                         <TitledPane text="Experience Type">
                             <VBox spacing="10">
-                                <RadioButton fx:id="radCoastal" text="Coastal Exploration" toggleGroup="$experienceType"/>
-                                <RadioButton fx:id="radOpenSea" text="Open Sea Adventure" toggleGroup="$experienceType"/>
-                                <RadioButton fx:id="radIslandHopping" text="Island Hopping" toggleGroup="$experienceType"/>
-                                <RadioButton fx:id="radMixed" text="Mixed Experience" toggleGroup="$experienceType"/>
+                                <RadioButton fx:id="radCoastal" text="Coastal Exploration">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="experienceType" />
+                           </toggleGroup></RadioButton>
+                                <RadioButton fx:id="radOpenSea" text="Open Sea Adventure" toggleGroup="$experienceType" />
+                                <RadioButton fx:id="radIslandHopping" text="Island Hopping" toggleGroup="$experienceType" />
+                                <RadioButton fx:id="radMixed" text="Mixed Experience" toggleGroup="$experienceType" />
                             </VBox>
                             <fx:define>
-                                <ToggleGroup fx:id="experienceType"/>
+                                <ToggleGroup fx:id="experienceType" />
                             </fx:define>
-                        </TitledPane>
-
-                        <TitledPane text="Popular vs Off-beaten Path">
-                            <Slider fx:id="sliderPopularity" max="10" showTickLabels="true" showTickMarks="true" majorTickUnit="5" minorTickCount="4"/>
                         </TitledPane>
                     </VBox>
                 </ScrollPane>
             </Tab>
 
-            <Tab text="Duration" styleClass="tab">
+            <Tab styleClass="tab" text="Duration">
                 <VBox spacing="15" styleClass="content-container">
                     <padding>
-                        <Insets top="20" right="20" bottom="20" left="20"/>
+                        <Insets bottom="20" left="20" right="20" top="20" />
                     </padding>
 
-                    <Label text="How long would you like your trip to be?" styleClass="section-header"/>
+                    <Label styleClass="section-header" text="How long would you like your trip to be?" />
 
-                    <RadioButton fx:id="radDayTrip" text="Day Trip (1 day)" toggleGroup="$tripDuration"/>
-                    <RadioButton fx:id="radWeekend" text="Weekend Getaway (2-3 days)" toggleGroup="$tripDuration"/>
-                    <RadioButton fx:id="radWeek" text="Week-long Vacation (4-7 days)" toggleGroup="$tripDuration"/>
-                    <RadioButton fx:id="radExtended" text="Extended Journey (8+ days)" toggleGroup="$tripDuration"/>
+                    <RadioButton fx:id="radDayTrip" text="Day Trip (1 day)">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="tripDuration" />
+                  </toggleGroup></RadioButton>
+                    <RadioButton fx:id="radWeekend" text="Weekend Getaway (2-3 days)" toggleGroup="$tripDuration" />
+                    <RadioButton fx:id="radWeek" text="Week-long Vacation (4-7 days)" toggleGroup="$tripDuration" />
+                    <RadioButton fx:id="radExtended" text="Extended Journey (8+ days)" toggleGroup="$tripDuration" />
 
-                    <fx:define>
-                        <ToggleGroup fx:id="tripDuration"/>
-                    </fx:define>
+                    <Label styleClass="label-small" text="Specific duration (days):" />
 
-                    <Label text="Specific duration (days):" styleClass="label-small"/>
-                    <HBox spacing="10" alignment="CENTER_LEFT">
-                        <Slider fx:id="sliderDays" min="1" max="30" value="7" />
-                        <Label text="days" styleClass="label-small"/>
-                    </HBox>
                 </VBox>
             </Tab>
 
-            <Tab text="Activities" styleClass="tab">
+            <Tab styleClass="tab" text="Activities">
                 <ScrollPane fitToWidth="true">
                     <VBox spacing="15" styleClass="content-container">
                         <padding>
-                            <Insets top="20" right="20" bottom="20" left="20"/>
+                            <Insets bottom="20" left="20" right="20" top="20" />
                         </padding>
 
-                        <Label text="What activities are you interested in?" styleClass="section-header"/>
+                        <Label styleClass="section-header" text="What activities are you interested in?" />
 
                         <HBox spacing="20">
                             <VBox spacing="10" HBox.hgrow="ALWAYS">
-                                <CheckBox fx:id="checkRelaxation" text="Relaxation"/>
-                                <CheckBox fx:id="checkSnorkeling" text="Snorkeling"/>
-                                <CheckBox fx:id="checkDiving" text="Scuba Diving"/>
-                                <CheckBox fx:id="checkFishing" text="Fishing"/>
+                                <CheckBox fx:id="checkRelaxation" text="Relaxation" />
+                                <CheckBox fx:id="checkSnorkeling" text="Snorkeling" />
+                                <CheckBox fx:id="checkDiving" text="Scuba Diving" />
+                                <CheckBox fx:id="checkFishing" text="Fishing" />
                             </VBox>
 
                             <VBox spacing="10" HBox.hgrow="ALWAYS">
-                                <CheckBox fx:id="checkCultural" text="Cultural Experiences"/>
-                                <CheckBox fx:id="checkWildlife" text="Marine Wildlife"/>
-                                <CheckBox fx:id="checkSailing" text="Sailing"/>
-                                <CheckBox fx:id="checkWaterSports" text="Water Sports"/>
+                                <CheckBox fx:id="checkCultural" text="Cultural Experiences" />
+                                <CheckBox fx:id="checkWildlife" text="Marine Wildlife" />
+                                <CheckBox fx:id="checkSailing" text="Sailing" />
+                                <CheckBox fx:id="checkWaterSports" text="Water Sports" />
                             </VBox>
                         </HBox>
 
-                        <Label text="Activity Intensity Level:" styleClass="label-small"/>
-                        <HBox spacing="10" alignment="CENTER_LEFT">
-                            <Label text="Relaxed" styleClass="label-small"/>
-                            <Slider fx:id="sliderIntensity" min="1" max="5" value="3" showTickMarks="true" majorTickUnit="1" minorTickCount="0" snapToTicks="true" HBox.hgrow="ALWAYS"/>
-                            <Label text="Adventurous" styleClass="label-small"/>
+                        <Label styleClass="label-small" text="Activity Intensity Level:" />
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Label styleClass="label-small" text="Relaxed" />
+                            <Slider fx:id="sliderIntensity" majorTickUnit="1" max="5" min="1" minorTickCount="0" showTickMarks="true" snapToTicks="true" value="3" HBox.hgrow="ALWAYS" />
+                            <Label styleClass="label-small" text="Adventurous" />
                         </HBox>
                     </VBox>
                 </ScrollPane>
             </Tab>
 
-            <Tab text="Budget" styleClass="tab">
+            <Tab styleClass="tab" text="Budget">
                 <VBox spacing="15" styleClass="content-container">
                     <padding>
-                        <Insets top="20" right="20" bottom="20" left="20"/>
+                        <Insets bottom="20" left="20" right="20" top="20" />
                     </padding>
 
-                    <Label text="What's your budget range?" styleClass="section-header"/>
+                    <Label styleClass="section-header" text="What's your budget range?" />
 
-                    <RadioButton fx:id="radBudget" text="Budget-friendly" toggleGroup="$budgetType"/>
-                    <RadioButton fx:id="radModerate" text="Moderate" toggleGroup="$budgetType"/>
-                    <RadioButton fx:id="radLuxury" text="Luxury" toggleGroup="$budgetType"/>
-                    <RadioButton fx:id="radUltraLuxury" text="Ultra Luxury" toggleGroup="$budgetType"/>
+                    <RadioButton fx:id="radBudget" text="Budget-friendly">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="budgetType" />
+                  </toggleGroup></RadioButton>
+                    <RadioButton fx:id="radModerate" text="Moderate" toggleGroup="$budgetType" />
+                    <RadioButton fx:id="radLuxury" text="Luxury" toggleGroup="$budgetType" />
+                    <RadioButton fx:id="radUltraLuxury" text="Ultra Luxury" toggleGroup="$budgetType" />
 
-                    <fx:define>
-                        <ToggleGroup fx:id="budgetType"/>
-                    </fx:define>
-
-                    <Label text="Specific budget amount (per person):" styleClass="label-small"/>
-                    <HBox spacing="10" alignment="CENTER_LEFT">
-                        <TextField fx:id="txtBudgetAmount" promptText="Amount"/>
-                        <ComboBox fx:id="comboCurrency" promptText="Currency"/>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <TextField fx:id="txtBudgetAmount" promptText="Amount" />
+                        <ComboBox fx:id="comboCurrency" promptText="Currency" />
                     </HBox>
                 </VBox>
             </Tab>
 
-            <Tab text="Travelers" styleClass="tab">
+            <Tab styleClass="tab" text="Travelers">
                 <VBox spacing="15" styleClass="content-container">
                     <padding>
-                        <Insets top="20" right="20" bottom="20" left="20"/>
+                        <Insets bottom="20" left="20" right="20" top="20" />
                     </padding>
 
-                    <Label text="Tell us about your travel group" styleClass="section-header"/>
+                    <Label styleClass="section-header" text="Tell us about your travel group" />
 
-                    <Label text="Number of travelers:" styleClass="label-small"/>
-                    <HBox spacing="10" alignment="CENTER_LEFT">
-                        <Label text="Adults" styleClass="label-small"/>
-                        <Spinner fx:id="spinnerAdults" min="1" max="20" initialValue="2" amountToStepBy="1"/>
+                    <Label styleClass="label-small" text="Number of travelers:" />
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label styleClass="label-small" text="Adults" />
+                        <Spinner fx:id="spinnerAdults" amountToStepBy="1" initialValue="2" max="20" min="1" />
 
-                        <Label text="Children" styleClass="label-small"/>
-                        <Spinner fx:id="spinnerChildren" min="0" max="10" initialValue="0" amountToStepBy="1"/>
+                        <Label styleClass="label-small" text="Children" />
+                        <Spinner fx:id="spinnerChildren" amountToStepBy="1" initialValue="0" max="10" min="0" />
                     </HBox>
 
-                    <CheckBox fx:id="chkChildFriendly" text="Need child-friendly options"/>
-                    <CheckBox fx:id="chkAccessibility" text="Need accessibility accommodations"/>
+                    <CheckBox fx:id="chkChildFriendly" text="Need child-friendly options" />
+                    <CheckBox fx:id="chkAccessibility" text="Need accessibility accommodations" />
                 </VBox>
             </Tab>
         </TabPane>
@@ -185,13 +168,28 @@
     <bottom>
         <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="button-container">
             <padding>
-                <Insets top="10" right="20" bottom="20" left="20"/>
+                <Insets bottom="20" left="20" right="20" top="10" />
             </padding>
-            <Button fx:id="btnSave" text="Save Progress" onAction="#handleSaveProgress"/>
-            <Button fx:id="btnPrevious" text="Previous" onAction="#handlePrevious"/>
-            <Button fx:id="btnNext" text="Next" onAction="#handleNext"/>
-            <Button fx:id="btnGeneratePlan" text="Generate Trip Plan" defaultButton="true" onAction="#handleGeneratePlan"/>
+            <Button fx:id="btnPrevious" onAction="#handlePrevious" text="Previous" />
+            <Button fx:id="btnNext" onAction="#handleNext" text="Next" />
+            <Button fx:id="btnGeneratePlan" defaultButton="true" onAction="#handleGeneratePlan" text="Generate Trip Plan" />
         </HBox>
     </bottom>
+   <left>
+        <VBox alignment="CENTER" prefHeight="603.0" prefWidth="328.0" spacing="10" styleClass="header-container" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <Label styleClass="title-label" text="Blue Lanka Guide Planner">
+                <font>
+                    <Font name="System Bold" size="24" />
+                </font>
+            </Label>
+            <ImageView fitWidth="120" preserveRatio="true">
+                <Image url="@./images/logo.png" />
+            </ImageView>
+            <Label styleClass="subtitle-label" text="Plan your perfect journey on the sea" />
+        </VBox>
+   </left>
 
 </BorderPane>

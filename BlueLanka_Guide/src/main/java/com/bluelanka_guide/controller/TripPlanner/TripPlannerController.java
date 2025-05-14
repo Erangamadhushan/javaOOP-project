@@ -12,9 +12,9 @@ public class TripPlannerController {
     @FXML
     private RadioButton radExtended;
     @FXML
-    private CheckBox checkMediterranean;
+    private CheckBox checkMatara;
     @FXML
-    private CheckBox checkCaribbean;
+    private CheckBox checkHikkaduwa;
     @FXML
     private CheckBox checkNordicFjords;
     @FXML
@@ -99,11 +99,6 @@ public class TripPlannerController {
 
     @FXML
     public void handleOtherRegion() {
-
-    }
-
-    @FXML
-    private void handleSaveProgress() {
 
     }
 
