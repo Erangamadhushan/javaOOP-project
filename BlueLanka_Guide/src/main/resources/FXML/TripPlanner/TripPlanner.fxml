@@ -46,16 +46,17 @@
                         <TitledPane text="Experience Type">
                             <VBox spacing="10">
                                 <RadioButton fx:id="radCoastal" text="Coastal Exploration">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="experienceType" />
-                           </toggleGroup></RadioButton>
+                                   <toggleGroup>
+                                      <ToggleGroup fx:id="experienceType" />
+                                   </toggleGroup>
+                                </RadioButton>
                                 <RadioButton fx:id="radOpenSea" text="Open Sea Adventure" toggleGroup="$experienceType" />
                                 <RadioButton fx:id="radIslandHopping" text="Island Hopping" toggleGroup="$experienceType" />
                                 <RadioButton fx:id="radMixed" text="Mixed Experience" toggleGroup="$experienceType" />
                             </VBox>
-                            <fx:define>
-                                <ToggleGroup fx:id="experienceType" />
-                            </fx:define>
+<!--                            <fx:define>-->
+<!--                                <ToggleGroup fx:id="experienceType" />-->
+<!--                            </fx:define>-->
                         </TitledPane>
                     </VBox>
                 </ScrollPane>
@@ -70,51 +71,48 @@
                     <Label styleClass="section-header" text="How long would you like your trip to be?" />
 
                     <RadioButton fx:id="radDayTrip" text="Day Trip (1 day)">
-                  <toggleGroup>
-                     <ToggleGroup fx:id="tripDuration" />
-                  </toggleGroup></RadioButton>
+                          <toggleGroup>
+                             <ToggleGroup fx:id="tripDuration" />
+                          </toggleGroup>
+                    </RadioButton>
                     <RadioButton fx:id="radWeekend" text="Weekend Getaway (2-3 days)" toggleGroup="$tripDuration" />
                     <RadioButton fx:id="radWeek" text="Week-long Vacation (4-7 days)" toggleGroup="$tripDuration" />
                     <RadioButton fx:id="radExtended" text="Extended Journey (8+ days)" toggleGroup="$tripDuration" />
-
-                    <Label styleClass="label-small" text="Specific duration (days):" />
 
                 </VBox>
             </Tab>
 
             <Tab styleClass="tab" text="Activities">
-                <ScrollPane fitToWidth="true">
-                    <VBox spacing="15" styleClass="content-container">
-                        <padding>
-                            <Insets bottom="20" left="20" right="20" top="20" />
-                        </padding>
+                <VBox spacing="15" styleClass="content-container">
+                    <padding>
+                        <Insets bottom="20" left="20" right="20" top="20" />
+                    </padding>
 
-                        <Label styleClass="section-header" text="What activities are you interested in?" />
+                    <Label styleClass="section-header" text="What activities are you interested in?" />
 
-                        <HBox spacing="20">
-                            <VBox spacing="10" HBox.hgrow="ALWAYS">
-                                <CheckBox fx:id="checkRelaxation" text="Relaxation" />
-                                <CheckBox fx:id="checkSnorkeling" text="Snorkeling" />
-                                <CheckBox fx:id="checkDiving" text="Scuba Diving" />
-                                <CheckBox fx:id="checkFishing" text="Fishing" />
-                            </VBox>
+                    <HBox spacing="20">
+                        <VBox spacing="10" HBox.hgrow="ALWAYS">
+                            <CheckBox fx:id="checkRelaxation" text="Relaxation" />
+                            <CheckBox fx:id="checkSnorkeling" text="Snorkeling" />
+                            <CheckBox fx:id="checkDiving" text="Scuba Diving" />
+                            <CheckBox fx:id="checkFishing" text="Fishing" />
+                        </VBox>
 
-                            <VBox spacing="10" HBox.hgrow="ALWAYS">
-                                <CheckBox fx:id="checkCultural" text="Cultural Experiences" />
-                                <CheckBox fx:id="checkWildlife" text="Marine Wildlife" />
-                                <CheckBox fx:id="checkSailing" text="Sailing" />
-                                <CheckBox fx:id="checkWaterSports" text="Water Sports" />
-                            </VBox>
-                        </HBox>
+                        <VBox spacing="10" HBox.hgrow="ALWAYS">
+                            <CheckBox fx:id="checkCultural" text="Cultural Experiences" />
+                            <CheckBox fx:id="checkWildlife" text="Marine Wildlife" />
+                            <CheckBox fx:id="checkSailing" text="Sailing" />
+                            <CheckBox fx:id="checkWaterSports" text="Water Sports" />
+                        </VBox>
+                    </HBox>
 
-                        <Label styleClass="label-small" text="Activity Intensity Level:" />
-                        <HBox alignment="CENTER_LEFT" spacing="10">
-                            <Label styleClass="label-small" text="Relaxed" />
-                            <Slider fx:id="sliderIntensity" majorTickUnit="1" max="5" min="1" minorTickCount="0" showTickMarks="true" snapToTicks="true" value="3" HBox.hgrow="ALWAYS" />
-                            <Label styleClass="label-small" text="Adventurous" />
-                        </HBox>
-                    </VBox>
-                </ScrollPane>
+                    <Label styleClass="label-small" text="Activity Intensity Level:" />
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label styleClass="label-small" text="Relaxed" />
+                        <Slider fx:id="sliderIntensity" majorTickUnit="1" max="5" min="1" minorTickCount="0" showTickMarks="true" snapToTicks="true" value="3" HBox.hgrow="ALWAYS" />
+                        <Label styleClass="label-small" text="Adventurous" />
+                    </HBox>
+                </VBox>
             </Tab>
 
             <Tab styleClass="tab" text="Budget">
@@ -126,9 +124,10 @@
                     <Label styleClass="section-header" text="What's your budget range?" />
 
                     <RadioButton fx:id="radBudget" text="Budget-friendly">
-                  <toggleGroup>
-                     <ToggleGroup fx:id="budgetType" />
-                  </toggleGroup></RadioButton>
+                      <toggleGroup>
+                         <ToggleGroup fx:id="budgetType" />
+                      </toggleGroup>
+                    </RadioButton>
                     <RadioButton fx:id="radModerate" text="Moderate" toggleGroup="$budgetType" />
                     <RadioButton fx:id="radLuxury" text="Luxury" toggleGroup="$budgetType" />
                     <RadioButton fx:id="radUltraLuxury" text="Ultra Luxury" toggleGroup="$budgetType" />
