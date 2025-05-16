@@ -14,7 +14,6 @@ public class TravelToolsWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Model.getInstance().getViewFactory().getToolSelectedMenuItem().addListener
                 ((observable, oldVal, newVal) -> {
-                    System.out.println(newVal);
 
                     switch (newVal){
                         case "CurrencyConverter" :

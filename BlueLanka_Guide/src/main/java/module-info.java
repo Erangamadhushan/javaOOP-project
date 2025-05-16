@@ -1,6 +1,7 @@
 module com.bluelanka_guide {
     requires javafx.controls;
     requires javafx.fxml;
+    requires com.google.gson;
 
 
     opens com.bluelanka_guide to javafx.fxml;

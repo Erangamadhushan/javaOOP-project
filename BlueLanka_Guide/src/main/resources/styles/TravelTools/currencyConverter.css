@@ -66,3 +66,8 @@
     -fx-text-fill: #FFFFFF;
     -fx-cursor: hand;
 }
+
+.error_lbl{
+    -fx-text-fill: #FF0000;
+    -fx-text-alignment: center;
+}
