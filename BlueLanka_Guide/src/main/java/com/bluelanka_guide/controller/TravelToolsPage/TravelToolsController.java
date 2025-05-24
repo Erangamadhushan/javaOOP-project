@@ -29,23 +29,23 @@ public class TravelToolsController implements Initializable {
     }
 
     private void onChecklist() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("Checklist");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("Checklist");
     }
 
     private void onEmergencyContacts() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("EmergencyContacts");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("EmergencyContacts");
     }
 
     private void onUnitConverter() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("UnitConverter");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("UnitConverter");
     }
 
     private void onWeather() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("Weather");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("Weather");
     }
 
     private void onCurrencyConverter() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("CurrencyConverter");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("CurrencyConverter");
     }
 
 }

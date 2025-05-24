@@ -70,7 +70,7 @@
                 <TextField fx:id="email_reg_id" layoutX="226.0" layoutY="176.0" promptText="Email" />
                 <PasswordField fx:id="password_reg_id" layoutX="227.0" layoutY="223.0" promptText="Password" />
                 <PasswordField fx:id="confirm_reg_id" layoutX="227.0" layoutY="277.0" promptText="Confirm Password" />
-                <Button fx:id="signup_reg_id" alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="350.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="322.0" style="-fx-background-color: #0a034e;" text="Sign Up" textFill="WHITE">
+                <Button fx:id="signup_reg_id" alignment="CENTER" contentDisplay="CENTER" layoutX="59.0" layoutY="343.0" mnemonicParsing="false" onAction="#signup_reg_idOnAction" prefHeight="34.0" prefWidth="327.0" style="-fx-background-color: #0a034e;" text="Sign Up" textFill="WHITE">
                     <font>
                         <Font name="Arial Bold" size="18.0" />
                     </font>
@@ -78,12 +78,12 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Label fx:id="text_reg_id" layoutX="58.0" layoutY="420.0" prefHeight="18.0" prefWidth="166.0" text="Already Have a Account?">
+                <Label fx:id="text_reg_id" layoutX="62.0" layoutY="438.0" prefHeight="18.0" prefWidth="166.0" text="Already Have a Account?">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
-                <Button fx:id="login_reg_id" layoutX="268.0" layoutY="416.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #0a034e;" text="Log In" textFill="#efeded">
+                <Button fx:id="login_reg_id" layoutX="272.0" layoutY="434.0" mnemonicParsing="false" onAction="#login_reg_idOnAction" prefHeight="26.0" prefWidth="113.0" style="-fx-background-color: #0a034e;" text="Log In" textFill="#efeded">
                     <font>
                         <Font name="Arial Bold" size="14.0" />
                     </font>
@@ -91,6 +91,15 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
+            <Button fx:id="cancel_reg_id" alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="388.0" mnemonicParsing="false" onAction="#cancel_reg_idOnAction" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #0a034e;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="msg2id" alignment="CENTER" layoutX="5.0" layoutY="315.0" prefHeight="18.0" prefWidth="438.0" textFill="#f20707" />
             </children>
         </AnchorPane>
     </center>

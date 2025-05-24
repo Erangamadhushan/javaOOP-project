@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
-<AnchorPane prefHeight="750.0" prefWidth="500.0" styleClass="checklist_container"
-            stylesheets="@../../styles/TravelTools/checklist.css" xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.bluelanka_guide.controller.TravelToolsPage.ChecklistController">
+
+<AnchorPane prefHeight="750.0" prefWidth="500.0" styleClass="checklist_container" stylesheets="@../../styles/TravelTools/checklist.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.TravelToolsPage.ChecklistController">
    <Button fx:id="btnBack" layoutX="25.0" layoutY="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="36.0" prefWidth="36.0" styleClass="back_button" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="35.0">
       <graphic>
          <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
@@ -18,4 +15,9 @@
          </ImageView>
       </graphic></Button>
    <Text layoutX="75.2" layoutY="62.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Checklist" AnchorPane.leftAnchor="75.2" AnchorPane.topAnchor="31.4" />
+   <ListView fx:id="listViewItems" layoutX="15.2" layoutY="178.4" prefHeight="552.0" prefWidth="470.0"
+             AnchorPane.bottomAnchor="20"
+              AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="178.4" />
+   <Button fx:id="btnAddNew" layoutX="58.0" layoutY="127.0" mnemonicParsing="false" styleClass="add_new_button" text="Add New" />
+   <Button fx:id="btnRemoveAll" layoutX="307.0" layoutY="127.0" mnemonicParsing="false" styleClass="remove_all_button" text="Remove All" />
 </AnchorPane>

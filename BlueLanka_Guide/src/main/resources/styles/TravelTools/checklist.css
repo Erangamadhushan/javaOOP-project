@@ -16,3 +16,27 @@
 .back_button:hover{
     -fx-cursor: hand;
 }
+
+.checklist_container Button{
+    -fx-padding: 6 15;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-font-size: 18;
+    -fx-font-weight: 600;
+}
+
+.add_new_button{
+    -fx-background-color: #04FF09;
+}
+
+.remove_all_button{
+    -fx-background-color: #FF0404;
+}
+
+.checklist_container .list-view{
+    -fx-background-color: #AAE3FF;
+}
+
+.checklist_container .list-cell{
+    -fx-pref-width: 470;
+}

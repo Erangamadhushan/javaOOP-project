@@ -16,3 +16,11 @@
 .back_button:hover{
     -fx-cursor: hand;
 }
+
+.unit_converter_container ChoiceBox{
+    -fx-font-family: "Poppins";
+    -fx-border-radius: 15px;
+    -fx-background-radius: 5px;
+    -fx-pref-width: 150px;
+    -fx-font-size: 18px;
+}

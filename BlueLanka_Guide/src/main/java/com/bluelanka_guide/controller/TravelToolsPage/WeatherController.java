@@ -16,6 +16,6 @@ public class WeatherController implements Initializable {
     }
 
     private void onBackBtnClicked() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("back");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("back");
     }
 }

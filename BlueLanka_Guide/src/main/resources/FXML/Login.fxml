@@ -12,24 +12,24 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.LoginController">
+<BorderPane fx:id="body1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bluelanka_guide.controller.LoginController">
     <right>
         <AnchorPane prefHeight="500.0" prefWidth="374.0" style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER">
             <children>
                 <Label alignment="CENTER" layoutX="1.0" layoutY="62.0" prefHeight="18.0" prefWidth="346.0" text="LOGIN" textAlignment="JUSTIFY" textFill="#0a034e">
                     <font>
-                        <Font name="Arial Bold" size="24.0" />
+                        <Font name="Arial Bold" size="33.0" />
                     </font>
                 </Label>
                 <Label layoutX="36.0" layoutY="155.0" text="User Name">
                     <font>
                         <Font name="Baskerville Old Face" size="18.0" />
                     </font></Label>
-                <Label layoutX="36.0" layoutY="250.0" text="Password">
+                <Label layoutX="36.0" layoutY="216.0" text="Password">
                     <font>
                         <Font name="Baskerville Old Face" size="18.0" />
                     </font></Label>
-                <PasswordField fx:id="passwordtext" layoutX="159.0" layoutY="248.0" promptText="Pasword">
+                <PasswordField fx:id="passwordtext" layoutX="159.0" layoutY="214.0" promptText="Pasword">
                     <effect>
                         <Blend />
                     </effect>
@@ -37,7 +37,7 @@
                         <Cursor fx:constant="TEXT" />
                     </cursor></PasswordField>
                 <TextField fx:id="usernametext" layoutX="159.0" layoutY="153.0" promptText="User Name" />
-                <Button id="loginbtn" fx:id="loginbtn_id" alignment="CENTER" layoutX="38.0" layoutY="328.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="272.0" style="-fx-border-radius: 5px; -fx-background-color: black; -fx-text-fill: white;" text="Log In" textFill="#0a034e">
+                <Button id="loginbtn" fx:id="loginbtn_id" alignment="CENTER" layoutX="38.0" layoutY="307.0" mnemonicParsing="false" onAction="#loginbtn_idOnAction" prefHeight="34.0" prefWidth="272.0" style="-fx-border-radius: 5px; -fx-background-color: #0a034e; -fx-text-fill: white;" text="Log In" textFill="WHITE">
                     <font>
                         <Font name="Arial Bold" size="18.0" />
                     </font>
@@ -47,16 +47,31 @@
                     <effect>
                         <Blend />
                     </effect></Button>
-                <Label layoutX="86.0" layoutY="400.0" text="New User? Join Now">
+                <Label layoutX="92.0" layoutY="426.0" text="New User? Join Now">
                     <font>
                         <Font name="Arial Narrow" size="16.0" />
                     </font>
                 </Label>
-                <Button fx:id="registerbtn_id" layoutX="223.0" layoutY="395.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Register" underline="true">
+                <Button fx:id="registerbtn_id" layoutX="229.0" layoutY="421.0" mnemonicParsing="false" onAction="#registerbtn_idOnAction" style="-fx-background-color: #0a034e;" text="Register" textFill="WHITE" underline="true">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
+                <Button id="loginbtn" fx:id="cancelbtn_id" alignment="CENTER" layoutX="38.0" layoutY="365.0" mnemonicParsing="false" onAction="#cancelbtn_idOnAction" prefHeight="34.0" prefWidth="272.0" style="-fx-border-radius: 5px; -fx-background-color: #0a034e; -fx-text-fill: white;" text="Cancel" textFill="#0a034e">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Blend />
+                    </effect>
+                </Button>
+            <Label fx:id="msg1id" alignment="CENTER" layoutX="-2.0" layoutY="260.0" prefHeight="18.0" prefWidth="366.0" textFill="#ef0909" />
             </children>
         </AnchorPane>
     </right>
@@ -73,7 +88,7 @@
                         <Font name="System Bold" size="36.0" />
                     </font>
                 </Label>
-                <Label alignment="CENTER" layoutX="1.0" layoutY="209.0" prefHeight="54.0" prefWidth="332.0" text="Guide" textFill="#0a034e">
+                <Label alignment="CENTER" layoutX="1.0" layoutY="214.0" prefHeight="54.0" prefWidth="332.0" text="Guide" textFill="#0a034e">
                     <font>
                         <Font name="System Bold" size="36.0" />
                     </font>

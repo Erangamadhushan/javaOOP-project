@@ -1,15 +1,19 @@
 package com.bluelanka_guide.views;
 
 import com.bluelanka_guide.controller.TravelToolsPage.TravelToolsWindowController;
+import com.bluelanka_guide.models.UnitType;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class ViewFactoryTravelTools {
+    private UnitType unitType;
+
     private final StringProperty toolSelectedMenuItem;
     private AnchorPane travelToolsView;
     private AnchorPane checklistView;
@@ -19,16 +23,27 @@ public class ViewFactoryTravelTools {
     private AnchorPane weatherView;
     private AnchorPane travelToolsSubMenuView;
     private BorderPane travelToolsWindowView;
+    private HBox listItemView;
 
 
     public ViewFactoryTravelTools(){
+        this.unitType = UnitType.Length;
         this.toolSelectedMenuItem = new SimpleStringProperty("");
+    }
+
+    public UnitType getUnitType() {
+        return unitType;
+    }
+
+    public void setUnitType(UnitType unitType) {
+        this.unitType = unitType;
     }
 
     public StringProperty getToolSelectedMenuItem() {
         return toolSelectedMenuItem;
     }
 
+    //travel tools menu views
     public BorderPane getTravelToolsWindow(){
         try{
             if(travelToolsWindowView == null){
@@ -62,6 +77,7 @@ public class ViewFactoryTravelTools {
         return travelToolsView;
     }
 
+    //travel tools views
     public AnchorPane getChecklistView() {
         try{
             if(checklistView == null){
@@ -117,9 +133,13 @@ public class ViewFactoryTravelTools {
         return weatherView;
     }
 
-    public void showTravelToolsSubMenuWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/TravelToolsSubMenu.fxml"));
-        createStage(loader);
+    public HBox getListItem(){
+        try{
+            listItemView = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/CheckItem.fxml")).load();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return listItemView;
     }
 
     public void showTravelToolsWindow(){
@@ -129,31 +149,7 @@ public class ViewFactoryTravelTools {
         createStage(loader);
     }
 
-    public void showChecklistWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/Checklist.fxml"));
-        createStage(loader);
-    }
-
-    public void showCurrencyConverterWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/CurrencyConverter.fxml"));
-        createStage(loader);
-    }
-
-    public void showEmergencyContactsWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/EmergencyContacts.fxml"));
-        createStage(loader);
-    }
-
-    public void showUnitConverterWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/UnitConverter.fxml"));
-        createStage(loader);
-    }
-
-    public void showWeatherWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/TravelToolsPage/Weather.fxml"));
-        createStage(loader);
-    }
-
+    //creating stage
     public void createStage(FXMLLoader loader){
         Scene scene = null;
         try{

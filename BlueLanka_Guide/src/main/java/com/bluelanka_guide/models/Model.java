@@ -17,7 +17,7 @@ public class Model {
         return model;
     }
 
-    public ViewFactoryTravelTools getViewFactory(){
+    public ViewFactoryTravelTools getViewFactoryTravelTools(){
         return viewFactoryTravelTools;
     }
 }

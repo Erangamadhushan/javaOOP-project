@@ -12,33 +12,33 @@ public class TravelToolsWindowController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().addListener
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().addListener
                 ((observable, oldVal, newVal) -> {
 
                     switch (newVal){
                         case "CurrencyConverter" :
-                            toolsParentWindow.setCenter(Model.getInstance().getViewFactory().getCurrencyConverterView());
-                            toolsParentWindow.setLeft(Model.getInstance().getViewFactory().getTravelToolsSubMenuView());
+                            toolsParentWindow.setCenter(Model.getInstance().getViewFactoryTravelTools().getCurrencyConverterView());
+                            toolsParentWindow.setLeft(Model.getInstance().getViewFactoryTravelTools().getTravelToolsSubMenuView());
                             break;
 
                         case "Weather" :
-                            toolsParentWindow.setCenter(Model.getInstance().getViewFactory().getWeatherView());
-                            toolsParentWindow.setLeft(Model.getInstance().getViewFactory().getTravelToolsSubMenuView());
+                            toolsParentWindow.setCenter(Model.getInstance().getViewFactoryTravelTools().getWeatherView());
+                            toolsParentWindow.setLeft(Model.getInstance().getViewFactoryTravelTools().getTravelToolsSubMenuView());
                             break;
 
                         case "UnitConverter" :
-                            toolsParentWindow.setLeft(Model.getInstance().getViewFactory().getTravelToolsSubMenuView());
-                            toolsParentWindow.setCenter(Model.getInstance().getViewFactory().getUnitConverterView());
+                            toolsParentWindow.setLeft(Model.getInstance().getViewFactoryTravelTools().getTravelToolsSubMenuView());
+                            toolsParentWindow.setCenter(Model.getInstance().getViewFactoryTravelTools().getUnitConverterView());
                             break;
 
                         case "EmergencyContacts" :
-                            toolsParentWindow.setLeft(Model.getInstance().getViewFactory().getTravelToolsSubMenuView());
-                            toolsParentWindow.setCenter(Model.getInstance().getViewFactory().getEmergencyContactsView());
+                            toolsParentWindow.setLeft(Model.getInstance().getViewFactoryTravelTools().getTravelToolsSubMenuView());
+                            toolsParentWindow.setCenter(Model.getInstance().getViewFactoryTravelTools().getEmergencyContactsView());
                             break;
 
                         case "Checklist" :
-                            toolsParentWindow.setLeft(Model.getInstance().getViewFactory().getTravelToolsSubMenuView());
-                            toolsParentWindow.setCenter(Model.getInstance().getViewFactory().getChecklistView());
+                            toolsParentWindow.setLeft(Model.getInstance().getViewFactoryTravelTools().getTravelToolsSubMenuView());
+                            toolsParentWindow.setCenter(Model.getInstance().getViewFactoryTravelTools().getChecklistView());
                             break;
 //
 //                        case "back" :
@@ -47,7 +47,7 @@ public class TravelToolsWindowController implements Initializable {
 //                            break;
 
                         default:
-                            toolsParentWindow.setLeft(Model.getInstance().getViewFactory().getTravelToolsView());
+                            toolsParentWindow.setLeft(Model.getInstance().getViewFactoryTravelTools().getTravelToolsView());
                             toolsParentWindow.setCenter(null);
                             break;
                     }

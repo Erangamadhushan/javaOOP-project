@@ -21,6 +21,7 @@ public class CurrencyConverterController implements Initializable {
     public Label lblToAmount;
     public Button btnConvert;
     public Label lblError;
+    public Button btnSwap;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -32,6 +33,8 @@ public class CurrencyConverterController implements Initializable {
         ObservableList<String> currencyList = FXCollections.observableArrayList(currencyArray);
         cmbFromCurrency.setItems(currencyList);
         cmbToCurrency.setItems(currencyList);
+//        cmbToCurrency.setEditable(true);
+//        cmbFromCurrency.setEditable(true);
 
         //convert button function
         btnConvert.setOnAction(event -> onConvert());
@@ -39,7 +42,7 @@ public class CurrencyConverterController implements Initializable {
     }
 
     private void onBackBtnClicked() {
-        Model.getInstance().getViewFactory().getToolSelectedMenuItem().set("back");
+        Model.getInstance().getViewFactoryTravelTools().getToolSelectedMenuItem().set("back");
     }
 
     private void onConvert() {

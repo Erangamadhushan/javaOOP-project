@@ -16,3 +16,29 @@
 .back_button:hover{
     -fx-cursor: hand;
 }
+
+.emergency_contacts_container VBox{
+    -fx-pref-width: 236;
+    -fx-padding: 0 0 0 20;
+    -fx-alignment: center-left;
+}
+
+.emergency_contacts_container .heading_vbox{
+    -fx-padding: 0 0 0 28;
+}
+
+.heading_vbox Label{
+    -fx-font-weight: 700;
+}
+
+.emergency_contacts_container .headings{
+    -fx-background-color: #70CBF5;
+}
+
+.emergency_contacts_container .content_first{
+    -fx-background-color: #BFF6FF;
+}
+
+.emergency_contacts_container .content_second{
+    -fx-background-color: #B9CEEF;
+}

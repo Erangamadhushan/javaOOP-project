@@ -23,7 +23,7 @@
    <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="230.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../assets/icons/Arrow.png" />
    </ImageView>
-   <Button layoutX="232.0" layoutY="206.0" mnemonicParsing="false" styleClass="swap_button">
+   <Button fx:id="btnSwap" layoutX="232.0" layoutY="206.0" mnemonicParsing="false" styleClass="swap_button">
       <graphic>
          <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../../assets/icons/Swap.png" />
