@@ -14,13 +14,13 @@ public class AppStarter extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(AppStarter.class.getResource("/FXML/TripPlanner/TripPlanner.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(),
-                800,
-                600);
-        stage.setTitle("Travel Tools");
-        stage.setScene(scene);
-        stage.show();
+//        FXMLLoader fxmlLoader = new FXMLLoader(AppStarter.class.getResource("/FXML/TripPlanner/TripPlanner.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(),
+//                800,
+//                600);
+//        stage.setTitle("Travel Tools");
+//        stage.setScene(scene);
+//        stage.show();
 
         Model.getInstance().getViewFactory().showTravelToolsWindow();
     }
